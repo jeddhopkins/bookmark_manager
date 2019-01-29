@@ -8,8 +8,15 @@ class Bookmark
     result.column_values(1)
   end
 
+  def self.add(url)
+    connection = PG.connect( dbname: self.testing? )
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('#{url}')")
+  end
+
+  private
+
   def self.testing?
-    return 'bookmark_manager_test' if ENV["RACK_ENV"] == 'test'
+    return 'bookmark_manager_test' if ENV['ENVIRONMENT'] == 'test'
     'bookmark_manager'
   end
 end

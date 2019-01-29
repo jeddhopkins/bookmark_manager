@@ -10,6 +10,12 @@ So that I can quickly go to web sites I regularly visit
 I would like to see a list of bookmarks
 ```
 
+```
+As a time-pressed user
+So that I can see the bookmarks I'm interested in
+I would like to be able to add bookmarks 
+```
+
 ## Domain Model
 
 ![Bookmark Manager domain model](./images/domain_model.png)

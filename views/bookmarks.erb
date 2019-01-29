@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Bookmarks</title>
   </head>
   <body>
+    <form action="/add">
+      <input type="submit" value="Add bookmark">
+    </form>
     <ul>
       <% @bookmarks.each do |bookmark| %>
         <li><%= bookmark %></li>

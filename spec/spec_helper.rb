@@ -14,8 +14,8 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 # at the top of spec/spec_helper.rb
-require 'features/web_helper.rb'
-ENV['RACK_ENV'] = 'test'
+require 'features/setup_test_db.rb'
+ENV['ENVIRONMENT'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
