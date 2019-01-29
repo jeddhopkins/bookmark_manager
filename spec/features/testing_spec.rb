@@ -1,3 +1,4 @@
+
 feature 'testing' do
 let(:bookmarks) {Bookmark.all}
 
@@ -7,9 +8,10 @@ let(:bookmarks) {Bookmark.all}
  end
 
  scenario 'option to view the list of bookmarks' do
+   add_to_db
    visit '/'
    click_button('View Bookmarks')
-   expect(page).to have_content(bookmarks[0])
+   expect(page).to have_content("http://www.makersacademy.com")
  end
 
 end

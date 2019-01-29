@@ -1,9 +1,15 @@
 require 'pg'
 
 class Bookmark
+
   def self.all
-    connection = PG.connect( dbname: 'bookmark_manager' )
+    connection = PG.connect( dbname: self.testing? )
     result = connection.exec( "SELECT * FROM bookmarks" )
     result.column_values(1)
+  end
+
+  def self.testing?
+    return 'bookmark_manager_test' if ENV["RACK_ENV"] == 'test'
+    'bookmark_manager'
   end
 end
