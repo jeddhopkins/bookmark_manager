@@ -1,9 +1,9 @@
-class Bookmark
-  @@all = [ "http://www.makersacademy.com",
-            "http://www.destroyallsoftware.com",
-            "http://facebook.com" ]
+require 'pg'
 
+class Bookmark
   def self.all
-    @@all
+    connection = PG.connect( dbname: 'bookmark_manager' )
+    result = connection.exec( "SELECT * FROM bookmarks" )
+    result.column_values(1)
   end
 end
