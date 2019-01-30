@@ -7,12 +7,15 @@
     <form action="/add">
       <input type="submit" value="Add bookmark">
     </form>
-    <form action="/delete">
-      <input type="submit" value="Delete bookmark">
-    </form>
     <ul>
-      <% @bookmarks.each do |bookmark| %>
-        <li><a href=<%= bookmark[1] %> ><%= bookmark[0] %></a></li>
+    <% @bookmarks.each do |bookmark| %>
+      <li>
+        <a href=<%= bookmark[1] %> ><%= bookmark[0] %></a>
+        <form class="form-inline" action="/delete_bookmark" method="post">
+          <input type="hidden" name="id" value="<%= bookmark[2] %>">
+          <input type="submit" value="Delete <%= bookmark[0]%>">
+        </form>
+      </li>
       <% end %>
     </ul>
   </body>

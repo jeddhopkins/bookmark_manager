@@ -5,12 +5,12 @@ class Bookmark
   def self.all
     initial_connection
     result = @connection.exec( "SELECT * FROM bookmarks" )
-    result.column_values(2).zip(result.column_values(1))
+    result.column_values(2).zip(result.column_values(1), result.column_values(0))
   end
 
-  def self.delete(title)
+  def self.delete(id)
     initial_connection
-    @connection.exec("DELETE FROM bookmarks WHERE title='#{title}'" )
+    @connection.exec("DELETE FROM bookmarks WHERE id='#{id}'" )
   end
 
   def self.add(title, url)
