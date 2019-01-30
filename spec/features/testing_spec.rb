@@ -11,8 +11,8 @@ let(:bookmarks) {Bookmark.all}
    add_to_db
    visit '/'
    click_button('View Bookmarks')
-   expect(page).to have_content("http://www.makersacademy.com")
-   expect(page).to have_content("http://www.google.com")
-   expect(page).to have_content("http://www.destroyallsoftware.com")
+   expect(page).to have_content("makers academy")
+   expect(page).to have_content("google")
+   expect(page).to have_content("destroy")
  end
 end

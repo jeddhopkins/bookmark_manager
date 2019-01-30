@@ -1,4 +1,5 @@
 require 'pg'
+require 'bookmark'
 
 def setup_db
   connection = PG.connect( dbname: 'bookmark_manager_test' )
@@ -6,9 +7,7 @@ def setup_db
 end
 
 def add_to_db
-  connection = PG.connect( dbname: 'bookmark_manager_test' )
-  connection.exec( "insert into bookmarks
-values(1, 'http://www.makersacademy.com'),
-(2, 'http://www.google.com'),
-(3, 'http://www.destroyallsoftware.com')")
+  Bookmark.add("makers academy", "http://www.makersacademy.com")
+  Bookmark.add("google", "http://www.google.com")
+  Bookmark.add("destroy", "http://www.destroyallsoftware.com")
 end
