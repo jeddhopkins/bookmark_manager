@@ -15,6 +15,12 @@
           <input type="hidden" name="id" value="<%= bookmark[2] %>">
           <input type="submit" value="Delete <%= bookmark[0]%>">
         </form>
+        <form class="form-inline" action="/update" method="post">
+          <input type="hidden" name="id" value="<%= bookmark[2]%>">
+          <input type="hidden" name="title" value="<%= bookmark[0]%>">
+          <input type="hidden" name="url" value="<%= bookmark[1]%>">
+          <input type="submit" value="Update <%= bookmark[0]%>">
+        </form>
       </li>
     <% end %>
     </ul>

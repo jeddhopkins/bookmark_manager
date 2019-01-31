@@ -19,14 +19,24 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/add_bookmark' do
-    @title = params[:title]
-    @url = params[:url]
-    Bookmark.add(@title, @url)
+    Bookmark.add(params[:title], params[:url])
     redirect '/bookmarks'
   end
 
   post '/delete_bookmark' do
     Bookmark.delete(params[:id])
+    redirect '/bookmarks'
+  end
+
+  post '/update' do
+    @id = params[:id]
+    @title = params[:title]
+    @url = params[:url]
+    erb :update
+  end
+
+  post '/update_bookmark' do
+    Bookmark.update(params[:id], params[:title], params[:url])
     redirect '/bookmarks'
   end
 

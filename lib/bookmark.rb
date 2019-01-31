@@ -18,6 +18,11 @@ class Bookmark
     @connection.exec("INSERT INTO bookmarks (title, url) VALUES ('#{title}', '#{url}')")
   end
 
+  def self.update(id, title, url)
+    initial_connection
+    @connection.exec("UPDATE bookmarks SET title = '#{title}', url = '#{url}' WHERE id = '#{id}'")
+  end
+
   private
 
   def self.initial_connection
