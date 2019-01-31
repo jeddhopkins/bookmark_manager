@@ -13,7 +13,19 @@ I would like to see a list of bookmarks
 ```
 As a time-pressed user
 So that I can see the bookmarks I'm interested in
-I would like to be able to add bookmarks 
+I would like to be able to add bookmarks
+```
+
+```
+As a user
+So I can delete a bookmark in Bookmark Manager
+I want to be able to delete a specific bookmark
+```
+
+```
+As a user
+So I can change a bookmark in Bookmark Manager
+I want to update a bookmark
 ```
 
 ## Domain Model
