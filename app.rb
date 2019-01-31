@@ -25,10 +25,6 @@ class BookmarkManager < Sinatra::Base
     redirect '/bookmarks'
   end
 
-  # get '/delete' do
-  #   erb :delete
-  # end
-
   post '/delete_bookmark' do
     Bookmark.delete(params[:id])
     redirect '/bookmarks'
